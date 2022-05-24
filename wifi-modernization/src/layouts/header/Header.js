@@ -1,50 +1,43 @@
-import { Card, Form } from 'react-bootstrap';
+import { Badge, Card, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import khaiLogo from '../../assets/khai-logo.png';
+import { LanguageService } from '../../services/LanguageService';
 import './Header.scss';
 
 
 function Header(props) {
-	const { lang } = props;
-	let cathedraName;
+  const { lang } = props;
+  const langService = new LanguageService(lang);
   const navigate = useNavigate();
 
-	switch(lang) {
-		case 'en':
-			cathedraName = 'Computer Systems and Network Department';
-			break;
-		case 'ua':
-			cathedraName = 'Кафедра комп`ютерних систем і мереж';
-			break;
-		case 'ru':
-			cathedraName = 'Кафедра компьютерных систем и сетей';
-			break;
-		default:
-			cathedraName = 'Computer Systems and Network Department';
-	}
-
-	const changeLang = (event) => {
-		navigate('/' + event.target.value, { replace: true });
-	};
+  const changeLang = (event) => {
+    navigate('/' + event.target.value, { replace: true });
+  };
 
 
-	return (
-		<Card>
-			<div className='d-flex justify-content-between align-items-center header'>
-				<div className="header__image">
-					<img src={khaiLogo} alt="khai-logo"/>
-				</div>
+  return (
+    <Card>
+      <div className='d-flex justify-content-between align-items-center header'>
+        <div className="header__image">
+          <img src={khaiLogo} alt="khai-logo"/>
+        </div>
 
-				<div className='text-uppercase'>{cathedraName} (503)</div>
+        <div className='text-uppercase text-center px-3'>{
+          langService.getLocalizedText({
+            'en': 'Computer Systems and Network Department',
+            'ua': 'Кафедра комп`ютерних систем і мереж',
+            'ru': 'Кафедра компьютерных систем и сетей'
+          })
+        } <Badge>503</Badge></div>
 
-				<Form.Select defaultValue={lang} onChange={changeLang} className='header__lang'>
-					<option value="en">EN</option>
-					<option value="ua">UA</option>
-					<option value="ru">RU</option>
-				</Form.Select>
-			</div>
-		</Card>
-	);
+        <Form.Select defaultValue={lang} onChange={changeLang} className='header__lang'>
+          <option value="en">EN</option>
+          <option value="ua">UA</option>
+          <option value="ru">RU</option>
+        </Form.Select>
+      </div>
+    </Card>
+  );
 }
 
 export default Header;
