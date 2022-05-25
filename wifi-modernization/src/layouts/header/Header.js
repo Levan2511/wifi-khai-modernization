@@ -1,5 +1,5 @@
 import { Badge, Card, Container, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import khaiLogo from '../../assets/khai-logo.png';
 import { LanguageService } from '../../services/LanguageService';
 import './Header.scss';
@@ -9,9 +9,11 @@ function Header(props) {
   const { lang } = props;
   const langService = new LanguageService(lang);
   const navigate = useNavigate();
+	const location = useLocation();
 
   const changeLang = (event) => {
-    navigate('/' + event.target.value, { replace: true });
+    const changedLangUrl = '/' + location.pathname.replace(/^\/\w{2}/, event.target.value);
+    navigate(changedLangUrl, { replace: true });
   };
 
 
@@ -19,7 +21,9 @@ function Header(props) {
     <Card>
       <Container className='d-flex justify-content-between align-items-center header'>
         <div className="header__image">
-          <img src={khaiLogo} alt="khai-logo"/>
+          <a href="https://csn.khai.edu" target="blank">
+            <img src={khaiLogo} alt="khai-logo"/>
+          </a>
         </div>
 
         <div className='text-uppercase text-center px-3'>{

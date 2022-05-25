@@ -1,5 +1,8 @@
 .menu {
 	&__link {
 		text-decoration: none;
+		&-btn {
+			text-align: left;
+		}
 	}
 }
