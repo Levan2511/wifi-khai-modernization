@@ -1,4 +1,4 @@
-import { Badge, Card, Form } from 'react-bootstrap';
+import { Badge, Card, Container, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import khaiLogo from '../../assets/khai-logo.png';
 import { LanguageService } from '../../services/LanguageService';
@@ -17,7 +17,7 @@ function Header(props) {
 
   return (
     <Card>
-      <div className='d-flex justify-content-between align-items-center header'>
+      <Container className='d-flex justify-content-between align-items-center header'>
         <div className="header__image">
           <img src={khaiLogo} alt="khai-logo"/>
         </div>
@@ -35,7 +35,9 @@ function Header(props) {
           <option value="ua">UA</option>
           <option value="ru">RU</option>
         </Form.Select>
-      </div>
+      </Container>
+      {/* <div className='d-flex justify-content-between align-items-center header'>
+      </div> */}
     </Card>
   );
 }
