@@ -8,7 +8,7 @@ const GUIDE_CONFIG = [
 	},
 	{
 		label:
-		'Windows Vista7',
+		'Windows Vista/7',
 		link: `win7`
 	},
 	{

@@ -1,5 +1,5 @@
-import { Card } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import { Accordion, Card } from "react-bootstrap";
+import { useLocation, useParams } from "react-router-dom";
 import Step from "../../components/step/Step";
 import GUIDE_CONFIG from "../../configs/instuction";
 
@@ -7,12 +7,10 @@ import './Guide.scss';
 
 function Guide(props) {
 	const location = useLocation();
+	const { lang } = useParams();
 	const guideUrl = location.pathname.replace(/^\/\w{2}\//, '');
 	const guide = GUIDE_CONFIG.find(guide => guide.link === guideUrl);
 
-
-
-	console.log(guide);
 	return (<>
 		<Card.Title>
 			{
@@ -20,7 +18,7 @@ function Guide(props) {
 			}
 		</Card.Title>
 		
-		<Step guide={guide}/>
+		{ guide ? <Step lang={lang} guide={guide}/> : <h6>Make sure route is correct</h6> }
 	</>);
 }
 
