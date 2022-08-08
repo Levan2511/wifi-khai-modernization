@@ -1,8 +1,12 @@
 .menu {
 	&__link {
+		display: block;
+		width: 100%;
+		padding: 0.25rem 0.75rem;
 		text-decoration: none;
 		&-btn {
 			text-align: left;
+			padding: 0;
 		}
 	}
 }

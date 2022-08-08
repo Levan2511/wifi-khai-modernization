@@ -1,7 +1,8 @@
 import './App.scss';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes,  } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import Guide from './layouts/guide/Guide';
+import { MissingRoute } from './MissingRoute';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 				<Route path="/:lang" element={<Layout/>}>
 					<Route path="*" element={<Guide/>}/>
 				</Route>
+				<Route path="*" element={<MissingRoute/>} />
 			</Routes>
     </div>
   );

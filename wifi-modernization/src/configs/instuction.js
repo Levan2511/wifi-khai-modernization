@@ -1,3 +1,4 @@
+import WIN_7_STEPS from "../constants/win7.steps";
 import WIN_8_STEPS from "../constants/win8.steps";
 
 const GUIDE_CONFIG = [
@@ -7,9 +8,9 @@ const GUIDE_CONFIG = [
 		steps: WIN_8_STEPS
 	},
 	{
-		label:
-		'Windows Vista/7',
-		link: `win7`
+		label: 'Windows Vista/7',
+		link: `win7`,
+		steps: WIN_7_STEPS
 	},
 	{
 		label:'Windows XP',
