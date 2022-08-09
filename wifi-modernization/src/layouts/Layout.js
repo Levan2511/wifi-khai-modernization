@@ -1,8 +1,9 @@
-import { Container } from "react-bootstrap";
 import { Outlet, useParams } from "react-router-dom";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import Menu from "./menu/Menu";
+
+import './Layout.scss';
 
 
 function Layout() {
