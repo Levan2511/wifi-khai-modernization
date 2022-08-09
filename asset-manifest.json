@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/wifi-khai-modernization.github.io/wifi-modernization/static/css/main.155e4bd4.css",
+    "main.js": "/wifi-khai-modernization.github.io/wifi-modernization/static/js/main.ea54871c.js",
+    "static/js/787.6a1c270b.chunk.js": "/wifi-khai-modernization.github.io/wifi-modernization/static/js/787.6a1c270b.chunk.js",
+    "static/media/khai-logo.png": "/wifi-khai-modernization.github.io/wifi-modernization/static/media/khai-logo.7afb9011457b64504145.png",
+    "index.html": "/wifi-khai-modernization.github.io/wifi-modernization/index.html",
+    "main.155e4bd4.css.map": "/wifi-khai-modernization.github.io/wifi-modernization/static/css/main.155e4bd4.css.map",
+    "main.ea54871c.js.map": "/wifi-khai-modernization.github.io/wifi-modernization/static/js/main.ea54871c.js.map",
+    "787.6a1c270b.chunk.js.map": "/wifi-khai-modernization.github.io/wifi-modernization/static/js/787.6a1c270b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.155e4bd4.css",
+    "static/js/main.ea54871c.js"
+  ]
+}
