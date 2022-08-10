@@ -8,12 +8,12 @@ import { MissingRoute } from './MissingRoute';
 function App() {
   return (
     <div className="App">
-			<Routes>
-				<Route path="/:lang" element={<Layout/>}>
-					<Route path="*" element={<Guide/>}/>
-				</Route>
-				<Route path="*" element={<MissingRoute/>} />
-			</Routes>
+      <Routes>
+        <Route path="/:lang" element={<Layout/>}>
+          <Route path=":guide" element={<Guide/>}/>
+        </Route>
+        <Route path="*" element={<MissingRoute/>} />
+      </Routes>
     </div>
   );
 }
